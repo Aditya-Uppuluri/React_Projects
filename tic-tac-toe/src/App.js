@@ -1,3 +1,5 @@
+import "App.css"
+
 function Daddycall() {
   console.log("Click me dadi");
 }
