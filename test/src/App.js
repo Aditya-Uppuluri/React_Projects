@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import { useState } from 'react';
-import CounterButton from './Counter'
+import { CounterButton, SimpleCounter } from './Counter'  
 import './App.css';
 
 
@@ -20,10 +20,19 @@ function AboutPage() {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick(increment = 1) {
+    setCount(count + increment);  // Increment or decrement the count
+  }
+
   return (
     <div className="App">
         <AboutPage />
         <CounterButton />
+        <CounterButton />
+        <SimpleCounter count={count} onClick={handleClick} />
+        <SimpleCounter count={count} onClick={handleClick} />
     </div>
   );
 }
